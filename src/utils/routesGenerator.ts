@@ -1,16 +1,4 @@
-import { ReactNode } from "react";
-
-type TRoute = {
-  path: string;
-  element: ReactNode;
-};
-
-type TItemsParameter = {
-  name: string;
-  path?: string;
-  element?: ReactNode;
-  children?: TItemsParameter[];
-};
+import { TItemsParameter, TRoute } from "../types";
 
 export const routesGenerator = (items: TItemsParameter[]) => {
   const routes = items.reduce((acc: TRoute[], item) => {
@@ -34,5 +22,3 @@ export const routesGenerator = (items: TItemsParameter[]) => {
 
   return routes;
 };
-
-
