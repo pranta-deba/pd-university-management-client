@@ -53,7 +53,8 @@ const baseQueryWithRefreshToken: BaseQueryFn<
       result = await baseQuery(args, api, extraOptions);
     } else {
       api.dispatch(logout());
-    }
+    } 
+    
   }
 
   return result;
