@@ -1,4 +1,5 @@
-import { useFormContext } from "react-hook-form";
+import { Input } from "antd";
+import { Controller } from "react-hook-form";
 
 type TPDInput = {
   type?: string;
@@ -13,15 +14,21 @@ const PDInput = ({
   className = "",
   placeholder = "",
 }: TPDInput) => {
-  const { register } = useFormContext();
   return (
-    <input
-      className={className}
-      type={type}
-      id={name}
-      placeholder={placeholder}
-      {...register(name)}
-    />
+    <>
+      <Controller
+        name={name}
+        render={({ field }) => (
+          <Input
+            {...field}
+            className={className}
+            type={type}
+            id={name}
+            placeholder={placeholder}
+          />
+        )}
+      />
+    </>
   );
 };
 
