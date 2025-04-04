@@ -14,6 +14,11 @@ const Login = () => {
   const dispatch = useAppDispatch();
   const [login] = useLoginMutation();
 
+  const defaultValues = {
+    userId: 'A-0002',
+    password: 'admin1234',
+  };
+
   const onSubmit = async (data: FieldValues) => {
     const toastId = toast.loading("login in....");
 
@@ -42,7 +47,7 @@ const Login = () => {
         minHeight: "100vh",
       }}
     >
-      <PDForm onSubmit={onSubmit}>
+      <PDForm onSubmit={onSubmit} defaultValues={defaultValues}>
         <div style={{ marginBottom: "10px" }}>
           <label htmlFor="userId">ID: </label>
           <PDInput name="userId" placeholder="ID" type="text" />

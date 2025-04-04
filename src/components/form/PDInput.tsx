@@ -1,9 +1,9 @@
 import { Input } from "antd";
 import { Controller } from "react-hook-form";
 
-type TPDInput = {
-  type?: string;
-  name?: string;
+type TPDInputProps = {
+  type: string;
+  name: string;
   className?: string;
   placeholder?: string;
 };
@@ -13,7 +13,7 @@ const PDInput = ({
   name = "",
   className = "",
   placeholder = "",
-}: TPDInput) => {
+}: TPDInputProps) => {
   return (
     <>
       <Controller
